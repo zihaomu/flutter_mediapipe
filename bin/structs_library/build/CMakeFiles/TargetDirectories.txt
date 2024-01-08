@@ -1,0 +1,4 @@
+/Users/mzh/work/my_project/flutter_pro/flutter_lab/dart_ffi_test/dart_application_1/bin/structs_library/build/CMakeFiles/rebuild_cache.dir
+/Users/mzh/work/my_project/flutter_pro/flutter_lab/dart_ffi_test/dart_application_1/bin/structs_library/build/CMakeFiles/edit_cache.dir
+/Users/mzh/work/my_project/flutter_pro/flutter_lab/dart_ffi_test/dart_application_1/bin/structs_library/build/CMakeFiles/structs_test.dir
+/Users/mzh/work/my_project/flutter_pro/flutter_lab/dart_ffi_test/dart_application_1/bin/structs_library/build/CMakeFiles/structs_library.dir
