@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/mzh/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/64t471e3/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/mzh/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/64t471e3/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "OpenCV_ffi::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "OpenCV_ffi",
+      "output": "/Users/mzh/AndroidStudioProjects/test_flutter/build/app/intermediates/cxx/Debug/64t471e3/obj/x86/libOpenCV_ffi.so",
+      "runtimeFiles": [
+        "/Users/mzh/AndroidStudioProjects/test_flutter/android/src/main/jniLibs/x86/libopencv_java4.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

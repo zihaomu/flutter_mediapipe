@@ -1,0 +1,12 @@
+ninja: Entering directory `/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/57o4p1a5/x86'
+[1/1] Linking CXX shared library /Users/mzh/AndroidStudioProjects/test_flutter/build/app/intermediates/cxx/Debug/57o4p1a5/obj/x86/libOpenCV_ffi.so
+FAILED: /Users/mzh/AndroidStudioProjects/test_flutter/build/app/intermediates/cxx/Debug/57o4p1a5/obj/x86/libOpenCV_ffi.so 
+: && /Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android31 --gcc-toolchain=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -std=c++17 -fuse-ld=lld -fno-limit-debug-info  -Wl,--build-id=sha1 -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libOpenCV_ffi.so -o /Users/mzh/AndroidStudioProjects/test_flutter/build/app/intermediates/cxx/Debug/57o4p1a5/obj/x86/libOpenCV_ffi.so CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/main.cpp.o -L/Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86 -llog  -lMNN  -lopencv_core  -lopencv_dnn  -lopencv_imgproc  -lvision_pose_detector  -lvision_pose_landmarker  -latomic -lm && :
+ld.lld: error: /Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86/libMNN.so is incompatible with elf_i386
+ld.lld: error: /Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86/libopencv_core.so is incompatible with elf_i386
+ld.lld: error: /Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86/libopencv_dnn.so is incompatible with elf_i386
+ld.lld: error: /Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86/libopencv_imgproc.so is incompatible with elf_i386
+ld.lld: error: /Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86/libvision_pose_detector.so is incompatible with elf_i386
+ld.lld: error: /Users/mzh/AndroidStudioProjects/test_flutter/android/app/../src/main/jniLibs/x86/libvision_pose_landmarker.so is incompatible with elf_i386
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

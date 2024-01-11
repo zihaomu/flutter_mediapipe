@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/64t471e3/armeabi-v7a",
+  "command": "/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi31 --gcc-toolchain=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I../../../../../include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -std=c++17 -fno-limit-debug-info  -fPIC -o CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/gaussian.cpp.o -c /Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/gaussian.cpp",
+  "file": "/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/gaussian.cpp"
+},
+{
+  "directory": "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/64t471e3/armeabi-v7a",
+  "command": "/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi31 --gcc-toolchain=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I../../../../../include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -std=c++17 -fno-limit-debug-info  -fPIC -o CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/image_ffi.cpp.o -c /Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/image_ffi.cpp",
+  "file": "/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/image_ffi.cpp"
+},
+{
+  "directory": "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/64t471e3/armeabi-v7a",
+  "command": "/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi31 --gcc-toolchain=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I../../../../../include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -std=c++17 -fno-limit-debug-info  -fPIC -o CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/main.cpp.o -c /Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/main.cpp",
+  "file": "/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/main.cpp"
+},
+{
+  "directory": "/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/64t471e3/armeabi-v7a",
+  "command": "/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi31 --gcc-toolchain=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/mzh/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I../../../../../include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -std=c++17 -fno-limit-debug-info  -fPIC -o CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/mpp_remap.cpp.o -c /Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/mpp_remap.cpp",
+  "file": "/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/mpp_remap.cpp"
+}
+]

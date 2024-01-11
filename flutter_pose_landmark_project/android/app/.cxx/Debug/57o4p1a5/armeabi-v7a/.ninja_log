@@ -1,0 +1,6 @@
+# ninja log v5
+0	1163	1704715562	CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/main.cpp.o	d8f6f955e091f846
+1164	1266	1704715562	/Users/mzh/AndroidStudioProjects/test_flutter/build/app/intermediates/cxx/Debug/57o4p1a5/obj/armeabi-v7a/libOpenCV_ffi.so	f2270a75e6f62ec9
+2	119	1704782267	build.ninja	a83d138f3accecca
+0	8	0	clean	72211b909249c408
+0	7	0	clean	72211b909249c408

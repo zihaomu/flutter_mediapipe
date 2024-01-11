@@ -1,0 +1,4 @@
+ninja: Entering directory `/Users/mzh/AndroidStudioProjects/test_flutter/android/app/.cxx/Debug/57o4p1a5/arm64-v8a'
+[1/2] Building CXX object CMakeFiles/OpenCV_ffi.dir/Users/mzh/AndroidStudioProjects/test_flutter/lib/opencv-cpp/main.cpp.o
+clang++: warning: argument unused during compilation: '-fuse-ld=lld' [-Wunused-command-line-argument]
+[2/2] Linking CXX shared library /Users/mzh/AndroidStudioProjects/test_flutter/build/app/intermediates/cxx/Debug/57o4p1a5/obj/arm64-v8a/libOpenCV_ffi.so
