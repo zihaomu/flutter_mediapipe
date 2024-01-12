@@ -130,7 +130,7 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
   }
 
   @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
+  void didChangeAppLifecycleState(AppLifecycleState state) async {
     final CameraController? cameraController = _camController;
 
     // App state changed before we got the chance to initialize.
@@ -141,7 +141,7 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
     if (state == AppLifecycleState.inactive) {
       cameraController.dispose();
     } else if (state == AppLifecycleState.resumed) {
-      initCamera();
+      await initCamera();
     }
   }
 
@@ -246,21 +246,21 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
 
     // logger.i("MOO log img size = wxh = ${image.width} x ${image.height}, lenght1 = ${image.planes[0].bytes.length}, lenght2 = ${image.planes[1].bytes.length}, lenght3 = ${image.planes[2].bytes.length}");
     // logger.i("MOO log img pixR = ${pixR},  pixS = ${pixS}!");
-
+    DateTime before = DateTime.now();
     Pointer<Uint8> imgBuffer = malloc.allocate(sizeBuffer0 + sizeBuffer1 + sizeBuffer2 + 1);
     Uint8List buffer = imgBuffer.asTypedList(sizeBuffer0 + sizeBuffer1 + sizeBuffer2);
     buffer.setAll(0, image.planes[0].bytes);
     buffer.setAll(sizeBuffer0, image.planes[1].bytes);
     buffer.setAll(sizeBuffer0 + sizeBuffer2, image.planes[2].bytes);
+    DateTime after = DateTime.now();
     // imgBuffer.asTypedList(sizeBuffer0 + sizeBuffer1 + sizeBuffer2).setAll(0, image.planes[0].bytes);
     // logger.i("MOO log copy 0 v by0 = ${image.planes[0].bytes[0]}, bu0 = ${imgBuffer[0]}");
     // imgBuffer.asTypedList(sizeBuffer0 + sizeBuffer1 + sizeBuffer2).setAll(sizeBuffer0, image.planes[1].bytes);
     // logger.i("MOO log copy 1 v by0 = ${image.planes[1].bytes[0]}, bu0 = ${imgBuffer[sizeBuffer0]}");
     // imgBuffer.asTypedList(sizeBuffer0 + sizeBuffer1 + sizeBuffer2).setAll(sizeBuffer0 + sizeBuffer2, image.planes[2].bytes);
     // logger.i("MOO log copy 2 v by0 = ${image.planes[2].bytes[0]}, bu0 = ${imgBuffer[sizeBuffer0 + sizeBuffer1]}");
-    DateTime before = DateTime.now();
+
     var res = await runFunc(imgBuffer, image.width, image.height, image.width * 3, 0, 0, 4, resultP); // 运行的结果
-    DateTime after = DateTime.now();
 
     malloc.free(imgBuffer);
     _detectionInProgress = false;
