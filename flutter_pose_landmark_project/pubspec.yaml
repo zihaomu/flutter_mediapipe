@@ -75,6 +75,8 @@ flutter:
     - assets/data/transformer.bin
     - assets/model/pose_landmark_full_sim.mnn
     - assets/model/pose_detection.mnn
+    - assets/model/pose_detection.tflite
+    - assets/model/pose_landmark_full.tflite
 #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

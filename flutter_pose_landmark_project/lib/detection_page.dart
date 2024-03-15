@@ -14,6 +14,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/services.dart';
 import 'package:test_flutter/main.dart';
 import './detection_page.dart';
+import './draw_layer.dart';
 
 class DetectionPage extends StatefulWidget { // 这个为啥要状态Widget
   const DetectionPage({Key? key}) : super(key: key);
@@ -31,8 +32,8 @@ typedef InitPose = int Function();
 typedef TestStructNative = Int32 Function(Pointer<PoseLandmarkResult> result);
 typedef TestStruct = int Function(Pointer<PoseLandmarkResult> result);
 
-typedef LoadModelNative = Int32 Function(Pointer<Uint8> buffer, Int64 buffer_size);
-typedef LoadModel = int Function(Pointer<Uint8> buffer, int buffer_size);
+typedef LoadModelNative = Int32 Function(Pointer<Uint8> buffer, Int64 buffer_size, Bool isTflite, Int32 device);
+typedef LoadModel = int Function(Pointer<Uint8> buffer, int buffer_size, bool isTflite, int device);
 
 typedef RunPoseLandmarkNative = Int32 Function(Pointer<Uint8> data, Int32 width, Int32 height, Int32 stride,Int32 flip, Int32 rotate, Int32 img_type, Pointer<PoseLandmarkResult> result);
 typedef RunPoseLandmark = int Function(Pointer<Uint8> data, int width, int height, int stride, int flip, int rotate, int img_type, Pointer<PoseLandmarkResult> result);
@@ -113,6 +114,9 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
   final Pointer<PoseLandmarkResult> resultP = calloc<PoseLandmarkResult>();
   late PoseLandmarkResult result;
 
+  int imgH = 0;
+  int imgW = 0;
+
   @override
   void initState() {
     super.initState();
@@ -164,9 +168,11 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
       return;
     }
 
-    final String modelDetectPath = 'assets/model/pose_detection.mnn';
+    // final String modelDetectPath = 'assets/model/pose_detection.mnn';
+    final String modelDetectPath = 'assets/model/pose_detection.tflite';
 
     final String modelLandmarkPath = 'assets/model/pose_landmark_full_sim.mnn';
+    // final String modelLandmarkPath = 'assets/model/pose_landmark_full.tflite';
 
     if (!modelLoadState) {
       // Read model to buffer
@@ -176,12 +182,12 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
       final Uint8List modelBufferDetect = await loadFileAsBinary(modelDetectPath);
       Pointer<Uint8> modelBufferDetectP = malloc.allocate(modelBufferDetect.length);
       modelBufferDetectP.asTypedList(modelBufferDetect.length).setRange(0, modelBufferDetect.length, modelBufferDetect);
-      var rd = loadModelFunc_Detect(modelBufferDetectP, modelBufferDetect.length);
+      var rd = loadModelFunc_Detect(modelBufferDetectP, modelBufferDetect.length, true, 0);
 
       final Uint8List modelBufferLandmark = await loadFileAsBinary(modelLandmarkPath);
       Pointer<Uint8> modelBufferLandmarkP = malloc.allocate(modelBufferLandmark.length);
       modelBufferLandmarkP.asTypedList(modelBufferLandmark.length).setRange(0, modelBufferLandmark.length, modelBufferLandmark);
-      var rl = loadModelFunc_Land(modelBufferLandmarkP, modelBufferLandmark.length);
+      var rl = loadModelFunc_Land(modelBufferLandmarkP, modelBufferLandmark.length, false, 1);
 
       logger.i("Load model status = rd = ${rd}, rl = ${rl}!");
       malloc.free(modelBufferLandmarkP);
@@ -226,6 +232,9 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
       var w = (_camFrameRotation == 0 || _camFrameRotation == 180) ? image.width : image.height;
       _camFrameToScreenScale = MediaQuery.of(context).size.width / w;
     }
+
+    imgH = 640;
+    imgW = 320;
 
     // Call the detector
     _detectionInProgress = true;
@@ -307,14 +316,16 @@ class _DetectionPageState extends State<DetectionPage> with WidgetsBindingObserv
       );
     }
 
-    return CameraPreview(_camController!);
-    // return Stack(
-    //   children: [
-    //     CameraPreview(_camController!),
-    //     DetectionsLayer(
-    //       arucos: _arucos,
-    //     ),
-    //   ],
-    // );
+    // return CameraPreview(_camController!);
+    return Stack(
+      children: [
+        CameraPreview(_camController!),
+        DarwPoseLayer(
+          pose_result: result,
+          imgW: imgW,
+          imgH: imgH
+        ),
+      ],
+    );
   }
 }
